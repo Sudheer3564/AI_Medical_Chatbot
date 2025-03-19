@@ -13,7 +13,7 @@ import speech_recognition as sr
 from streamlit_option_menu import option_menu
 
 # Page icon
-icon = Image.open(r"C:\Users\rishi\Desktop\Vijaya\Logo.png")
+icon = Image.open(r"Logo.png")
 
 # Page configuration
 st.set_page_config(
