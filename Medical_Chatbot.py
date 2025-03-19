@@ -1,5 +1,4 @@
-#%%writefile Chatbot.py
-
+# Import the required libraries
 import os
 import streamlit as st
 import google.generativeai as genai
@@ -11,9 +10,13 @@ import requests
 from PIL import Image
 import speech_recognition as sr
 from streamlit_option_menu import option_menu
+from dotenv import load_dotenv  # Import the dotenv library
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Page icon
-icon = Image.open(r"Logo.png")
+icon = Image.open(r"C:\Users\rishi\Desktop\Vijaya\Logo.png")
 
 # Page configuration
 st.set_page_config(
@@ -118,12 +121,11 @@ with st.sidebar:
 
 # Home Section
 if selected == "Home":
-    # Set up Google API Key directly
-    GOOGLE_API_KEY = "AIzaSyDsYJi02_FKuUtYcxoG2X9nrOqdP93DRjw"  # Replace with your actual API key
-    YOUTUBE_API_KEY = "AIzaSyASK18r_R9QNjb936ITzhqINRUVyJIeqUs"  # Replace with your actual YouTube API key
+    # Load API keys from .env file
+    GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")  # Gemini API key
+    YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")  # YouTube API key
 
     # Configure Google Generative AI
-    os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
     genai.configure(api_key=GOOGLE_API_KEY)
 
     # Function to autoplay audio in Streamlit
