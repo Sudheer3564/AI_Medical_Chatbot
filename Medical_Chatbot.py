@@ -16,7 +16,7 @@ from dotenv import load_dotenv  # Import the dotenv library
 load_dotenv()
 
 # Page icon
-icon = Image.open(r"C:\Users\rishi\Desktop\Vijaya\Logo.png")
+icon = Image.open(r"Logo.png")
 
 # Page configuration
 st.set_page_config(
@@ -549,7 +549,7 @@ elif selected == "Project Details":
 
     # Display Logo
     st.markdown("<h3 style='color: #000080;'>Project Logo:</h3>", unsafe_allow_html=True)
-    logo_path = r"C:\Users\rishi\Desktop\Vijaya\Logo.png" # Update the path to your logo
+    logo_path = r"Logo.png" # Update the path to your logo
     try:
         logo = Image.open(logo_path)
         st.image(logo, caption="AI-Powered Mental Health Therapist Chatbot", width=300, use_container_width=True)
